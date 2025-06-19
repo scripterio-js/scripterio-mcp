@@ -1,0 +1,46 @@
+{
+  "name": "scripterio-mcp",
+  "productName": "ScripterI/O MCP Server",
+  "version": "1.0.0",
+  "description": "Fast, easy and reliable Testing MCP Server.",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "scripterio-mcp": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "keywords": [
+    "scripterio",
+    "ScripterI/O MCP",
+    "MCP server",
+    "MCP"
+  ],
+  "author": "Vadym Nastoiashchyi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scripterio-js/scripterio-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scripterio-js/scripterio-mcp/issues"
+  },
+  "homepage": "https://github.com/scripterio-js/scripterio-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "scripterio": "^1.9.0",
+    "zod-to-json-schema": "^3.23.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "prettier": "3.0.3",
+    "typescript": "^5.3.3"
+  }
+}
